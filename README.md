@@ -7,6 +7,8 @@ Classes can inherit from any other class. They then share @@variables. They do n
 Confused?
 
 ## @variable is unique to an instance of a class
+`@variable` is visible to all methods in an instance of a class, but not across instances. 
+In this case, instances created with `x = Test.new`
 ```
 class Test
   attr_accessor variable # creates public methods to access @variable
@@ -17,6 +19,10 @@ end
 ```
 
 ## self.class.variable is global across all instances of class, but not subclasses
+
+`self.class.variable` is visible across all instances of a class, but not instances of subclasses.
+Within a class method, these variables can be referenced with @variable, as they are a class variable belonging to 
+the instance of our class definition ( in this case the class Test itself ).
 ```
 class Test
   class << self
@@ -33,6 +39,7 @@ class Test
 end
 ```
 ## @@variable is global across all instances of the class, including subclasses
+
 ```
 class Test
   attr_accessor variable # creates public methods to access @variable
