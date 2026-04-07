@@ -15,6 +15,9 @@ class Test
   def initialize
     @variable = 1.1 # ( Or Test.new.variable )
   end
+  def self.mymethod
+    @variable == Null # i.e. it hasn't been defined
+  end
 end
 ```
 
@@ -45,6 +48,9 @@ class Test
   attr_accessor variable # creates public methods to access @variable
   def initialize
     @@variable = 1.3 # (  @@variable != self.class.account )
+  end
+  def self.mymethod
+     @@variable == 1.3 # i.e it is the same as using it in a standard method.
   end
 end
 ```
