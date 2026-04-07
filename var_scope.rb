@@ -23,7 +23,7 @@ class Test
   end
 
   def debug1
-    puts "Instance method"
+    puts "Instance method. Our class is #{self.class}"
     puts "  I exist only in a specific instance of the class"
     puts "  @account = #{@account}"
     puts "  self.account = #{self.account}"
@@ -42,7 +42,7 @@ class Test
   end
 
   def self.debug2
-    puts "in self.method"
+    puts "in self.method. Our class is #{self.class}"
     begin
       puts "  I exist in a all instances of the class, but not subclasses. I am not instance.@account"
       puts "  @account = #{@account}"
